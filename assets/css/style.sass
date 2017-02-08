@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300")
+
+$background-column: rgba(#696969, 0.7)
+$background-task: #dfdfdf
+$color-task: #161616
+$background-modal: rgba(0,0,0,0.7)
+$background-modal-content: #fefefe
+$color-close: #aaaaaa
+$background-input-text: #bbbbbb
+$color-placeholder: #2d2d2d
+
+body
+  background: url('../img/bg.jpg')
+  color: black
+  font-family: "Roboto", sans-serif
+  padding: 15px 15px
+  margin: 0
+  font-size: 18px
+
+h1
+  text-align: center
+  font-size: 50px
+  margin: 10px 0
+
+h2, h3
+  margin: 0
+  text-transform: uppercase
+
+h2
+  font-size: 30px
+  margin-bottom: 10px
+  color: white
+
+form h2
+  color: black
+
+h3
+  font-size: 23px
+
+.desc
+  font-size: 20px
+  min-height: 22px
+  min-width: 100px
+  background-repeat: no-repeat
+  background-position: right
+
+#main
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  align-items: center
+  width: 100%
+
+.columns
+  display: flex
+  flex-direction: column
+  background-color: $background-column
+  width: 100%
+  max-width: 320px
+  margin: 5px auto // auto ?
+  padding: 10px 10px
+  border-radius: 10px
+  color: #3c3c3c
+
+textarea
+  width: 90%
+  font-size: 15px
+  resize: vertical
+  height: 40px
+  max-height: 50%
+  padding: 5px 10px
+  border: 0px
+  border-radius: 10px
+  background-color: $background-input-text
+
+.task
+  display: flex
+  flex-direction: column
+  background-color: $background-task
+  width: 90%
+  max-width: 300px
+  margin: 5px auto
+  padding: 10px 10px
+  border-radius: 10px
+  color: $color-task
+
+.checkboxes, .nope, .descText
+  display: none
+
+#contentModal .task .nope
+  display: block
+
+#contentModal .task
+  align-items: center
+
+#contentModal .nope
+  display: block
+
+#contentModal .task .desc
+  text-align: center
+  width: 100%
+
+.modal
+  display: none
+  position: fixed
+  z-index: 1 // ?
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: $background-modal
+
+.modal-content
+  display: flex
+  flex-direction: column
+  background-color: $background-modal-content
+  margin: auto
+  padding: 10px
+  border: 1px solid #888
+  border-radius: 10px
+  width: 80%
+
+#contentModal
+  display: flex
+  flex-direction: column
+  align-items: center
+
+#contentModal .task .checkboxes
+  display: block
+  margin-top: 10px
+  font-size: 20px
+
+#contentModal .taskDelete
+  display: block
+
+#close
+  color: $color-close
+  font-size: 15px
+
+.newTask
+  background-image: url('../img/plus.png')
+  background-size: 50px 50px
+  background-repeat: no-repeat
+  width: 50px
+  height: 50px
+  align-self: flex-end
+
+.newTask:hover
+  background-image: url('../img/plusHOV.png')
+
+#newColumn
+  background-image: url('../img/plusCOL.png')
+  background-color: rgba(218, 218, 218, 0.3)
+  background-size: 120px 120px
+  background-repeat: no-repeat
+  margin-top: 5px
+  border: 3px dashed black
+  width: 120px
+  height: 120px
+
+#newColumn:hover
+  background-image: url('../img/plusHOV.png')
+form
+  width: 90%
+
+form:not(.nope)
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 90%
+  background-color: $background-task
+  margin: 5px auto 0 auto
+  padding: 10px
+  border-radius: 10px
+
+textarea[name=desc]
+  margin: 10px 0
+
+input[type=text]
+  width: 90%
+  height: 30px
+  font-size: 15px
+  padding: 0 10px
+  margin-top: 10px
+  border: 0px
+  border-radius: 10px
+  background-color: $background-input-text
+
+input[type=submit], input[type=button], button
+  height: 40px
+  width: auto
+  margin-top: 10px
+  background-color: black
+  border: 1px solid black
+  border-radius: 2px
+  color: white
+  font-size: 20px
+
+#submitTask
+  background-color: #0075ff
+  color: white
+
+#addCheckbox
+  background-color: #2b2b2b
+  height: 25px
+  width: auto
+  font-size: 15px
+
+form .taskDelete
+  width: 100%
+  background-color: #d40000
+  border-color: #8c0000
+  text-align: center
+
+form .taskValidate
+  width: 100%
+  background-color: #039a00
+  border-color: #085e00
+  text-align: center
+
+input[type=text]::-webkit-input-placeholder
+  color: $color-placeholder
+
+input[type=text]::-moz-placeholder
+  color: $color-placeholder
+
+input[type=text]:-ms-input-placeholder
+  color: $color-placeholder
+
+input[type=text]:-moz-placeholder
+  color: $color-placeholder
+
+textarea::-webkit-input-placeholder
+  color: $color-placeholder
+
+textarea::-moz-placeholder
+  color: $color-placeholder
+
+textarea:-ms-input-placeholder
+  color: $color-placeholder
+
+textarea:-moz-placeholder
+  color: $color-placeholder
+
+#dynamicInput
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.checkbox
+  margin-top: 10px
+
+.drop_hover
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) inset
+
+#contentModal h2
+  color: black
+
+@media screen and (min-width: 641px)
+  body
+    overflow-x: auto
+
+  h1
+    text-align: left
+
+  #contentModal .task
+    max-width: 90%
+
+  #main
+    width: 100%
+    align-items: flex-start
+    flex-flow: row nowrap
+    margin-right: auto
+    padding-right: 50px
+
+  .columns
+    margin: 5px 50px 0 0
+    min-width: 300px
+
+  #newColumn
+    margin-right: 50px
+    min-width: 120px
